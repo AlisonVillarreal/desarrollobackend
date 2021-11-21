@@ -15,7 +15,7 @@ postCtr.readPost = async(req, res) => {
 }
 
 
-/////// create
+/////// crear posts
 postCtr.createPost = async(req, res) => {
     try {
         const { titulo, descripcion } = req.body;
@@ -28,7 +28,7 @@ postCtr.createPost = async(req, res) => {
     }
 }
 
-///////listar por id 
+///////listar posts por id 
 postCtr.readPostID = async(req, res) => {
     try {
         const id = parseInt(req.params.id);

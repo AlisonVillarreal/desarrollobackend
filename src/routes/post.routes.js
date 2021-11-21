@@ -1,4 +1,5 @@
 const Express = require('express');
+const { checkTokenUser } = require('../auth/token_validation');
 const router = Express.Router();
 const postCtr = require('../controllers/post.controller')
 
@@ -6,7 +7,7 @@ router.get('/listar', postCtr.readPost); //// listar post
 
 router.get('/listarID/:id', postCtr.readPostID); //// listar por id
 
-router.post('/create', postCtr.createPost); //// crear post
+router.post('/create', checkTokenUser, postCtr.createPost); //// crear post
 
 router.delete('/delete/:id', postCtr.deletePost); //// eliminar post
 
